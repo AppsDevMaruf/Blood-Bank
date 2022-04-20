@@ -18,6 +18,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     private String gender = "Male";
+    private String bloodGroup;
     private String[] bloodGroupList = {"A+", "A-", "AB+", "AB-", "B+", "B-", "O+", "O-"};
     EditText nameEdit, numberEdit;
     RadioGroup radioGp;
@@ -55,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-                final String bloodGroup = adapterView.getItemAtPosition(i).toString();
+              bloodGroup = adapterView.getItemAtPosition(i).toString();
                 Toast.makeText(MainActivity.this, bloodGroup, Toast.LENGTH_SHORT).show();
 
             }
@@ -71,8 +72,17 @@ public class MainActivity extends AppCompatActivity {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String name = nameEdit.getText().toString();
-                String number = numberEdit.getText().toString();
+                String name = nameEdit.getText().toString().trim();
+                String number = numberEdit.getText().toString().trim();
+                if (name.equalsIgnoreCase("")) {
+                    nameEdit.setError("This field can not be blank");
+                }
+                if (number.equalsIgnoreCase("")) {
+                    numberEdit.setError("This field can not be blank");
+                }
+                else {
+                    Toast.makeText(MainActivity.this, name+"\n"+gender+"\n"+number+"\n"+bloodGroup+" ", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
