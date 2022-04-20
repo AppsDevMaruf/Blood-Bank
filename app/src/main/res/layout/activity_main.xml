@@ -25,8 +25,10 @@
         android:layout_marginTop="30dp"
         android:minHeight="20dp"
         android:text="Full Name :"
+        app:layout_constraintBottom_toTopOf="@+id/genderLabel"
         app:layout_constraintStart_toStartOf="@+id/banner"
-        app:layout_constraintTop_toBottomOf="@id/banner" />
+        app:layout_constraintTop_toBottomOf="@id/banner"
+        app:layout_constraintVertical_bias="0.072" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/nameEt"
@@ -47,8 +49,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:text="Gender :"
+        app:layout_constraintBottom_toTopOf="@+id/mobileNumberLabel"
         app:layout_constraintStart_toStartOf="@id/nameLabel"
-        app:layout_constraintTop_toBottomOf="@id/nameEt" />
+        app:layout_constraintTop_toBottomOf="@id/nameEt"
+        app:layout_constraintVertical_bias="0.155" />
 
     <RadioGroup
         android:id="@+id/radioGP"
@@ -92,8 +96,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="Mobile Number :"
+        app:layout_constraintBottom_toTopOf="@+id/bloodGroupLabel"
         app:layout_constraintStart_toStartOf="@id/genderLabel"
-        app:layout_constraintTop_toBottomOf="@id/radioGP" />
+        app:layout_constraintTop_toBottomOf="@id/radioGP"
+        app:layout_constraintVertical_bias="0.05" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/numberEt"
@@ -102,7 +108,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="16dp"
-        android:hint="Maruf Alam"
+        android:hint="01687422***"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/mobileNumberLabel"
