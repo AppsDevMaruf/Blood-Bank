@@ -9,7 +9,7 @@
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/banner"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="150dp"
         android:background="@color/black"
         android:scaleType="centerCrop"
         android:src="@drawable/save_life_blood"
@@ -59,8 +59,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
         android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/genderLabel"
@@ -118,34 +118,90 @@
         android:id="@+id/bloodGroupLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="28dp"
         android:text="Blood Group :"
         app:layout_constraintStart_toStartOf="@id/mobileNumberLabel"
         app:layout_constraintTop_toBottomOf="@id/numberEt" />
+
 
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@id/bloodGroupLabel"
-        tools:layout_editor_absoluteY="419dp"
-        app:layout_constraintTop_toBottomOf="@id/numberEt"/>
+        app:layout_constraintTop_toBottomOf="@id/numberEt" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/questionLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="Are You Eligible To Donate Blood?"
+        android:textColor="#F60000"
+        app:layout_constraintStart_toStartOf="@id/bloodGroupLabel"
+        app:layout_constraintTop_toBottomOf="@id/spinner" />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/ckAge"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:text="You are aged 18+"
+
+        app:layout_constraintEnd_toStartOf="@id/ckHealth"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="@id/bloodGroupLabel"
+        app:layout_constraintTop_toBottomOf="@id/questionLabel" />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/ckHealth"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="You are fit and healthy"
+        app:layout_constraintEnd_toEndOf="@id/spinner"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/ckAge"
+        app:layout_constraintTop_toTopOf="@id/ckAge" />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/ckWeight"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="You weigh more than 45kg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="@id/ckAge"
+        app:layout_constraintTop_toBottomOf="@id/ckAge" />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/ckAntibiotic"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="You are taking antibiotics"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="@id/ckWeight"
+        app:layout_constraintTop_toBottomOf="@id/ckWeight" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/saveBtn"
-        app:layout_constraintStart_toStartOf="@id/bloodGroupLabel"
-        app:layout_constraintTop_toBottomOf="@id/spinner"
-        app:layout_constraintEnd_toEndOf="@id/spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:backgroundTint="@color/black"
         android:text="Save"
         android:textColor="#CC0000"
-        android:backgroundTint="@color/black"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/spinner"
+        app:layout_constraintStart_toStartOf="@id/bloodGroupLabel"
+        app:layout_constraintTop_toBottomOf="@id/ckAntibiotic" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
