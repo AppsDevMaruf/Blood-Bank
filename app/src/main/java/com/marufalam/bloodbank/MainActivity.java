@@ -3,6 +3,7 @@ package com.marufalam.bloodbank;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatCheckBox;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -112,6 +113,14 @@ public class MainActivity extends AppCompatActivity {
                     }
                     //Displaying the message on the toast
                     Toast.makeText(MainActivity.this, name + "\n" + gender + "\n" + number + "\n" + bloodGroup + "\n"+result.toString(), Toast.LENGTH_SHORT).show();
+
+                    Intent intent = new Intent(MainActivity.this,DetailsActivity.class);
+                    intent.putExtra("name",name);
+                    intent.putExtra("gender",gender);
+                    intent.putExtra("number",number);
+                    intent.putExtra("bloodGroup",bloodGroup);
+                    intent.putExtra("ckBox",result.toString());
+                    startActivity(intent);
                 }
 
                     ///////////////////
