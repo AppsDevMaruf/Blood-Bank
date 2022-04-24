@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -39,6 +40,7 @@
         android:layout_marginEnd="16dp"
         android:hint="Maruf Alam"
         android:minHeight="48dp"
+        android:imeOptions="actionNext"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/nameLabel"
         app:layout_constraintTop_toBottomOf="@+id/banner" />
@@ -62,6 +64,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="16dp"
         android:orientation="horizontal"
+        android:checkedButton="@id/male"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/genderLabel"
         app:layout_constraintTop_toBottomOf="@id/nameEt">
@@ -109,7 +112,9 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="16dp"
         android:hint="01687422***"
+        android:inputType="phone"
         android:minHeight="48dp"
+        android:imeOptions="actionNext"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/mobileNumberLabel"
         app:layout_constraintTop_toBottomOf="@id/radioGP" />
@@ -132,6 +137,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:contentDescription="@string/app_name"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -202,6 +208,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/spinner"
         app:layout_constraintStart_toStartOf="@id/bloodGroupLabel"
-        app:layout_constraintTop_toBottomOf="@id/ckAntibiotic" />
+        app:layout_constraintTop_toBottomOf="@id/ckAntibiotic"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
